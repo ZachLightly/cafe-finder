@@ -1,6 +1,9 @@
 .venv
 .env
 
+# sqlite database
+*.db
+
 old_ex
 __pycache__/
 

@@ -1,6 +1,6 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, UUID
 from sqlalchemy.orm import relationship
-from sqlalchemy.dialects.postgresql import UUID
+# from sqlalchemy.dialects.postgresql import UUID
 from ..db import Base
 import uuid
 
@@ -14,5 +14,5 @@ class Item(Base):
     notes = Column(String)
     image_url = Column(String)
     # cafe
-    cafe_id = Column(UUID(as_uuid=True), ForeignKey("cafes.id"), nullable=False)
+    cafe_id = Column(UUID(as_uuid=True), ForeignKey("cafes.id"), nullable=False, index=True)
     cafe = relationship("Cafe", back_populates="items")

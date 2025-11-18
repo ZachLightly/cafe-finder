@@ -1,0 +1,74 @@
+{
+    "cafes": [
+        {
+            "name": "Blue Willow Coffee",
+            "location": "Seattle, WA",
+            "cafe_rating": 4.6,
+            "menu_rating": 4.4,
+            "image_url": "https://example.com/images/blue-willow.jpg",
+            "items": [
+                {
+                    "name": "Flat White",
+                    "description": "Silky espresso with steamed milk",
+                    "rating": 4.7,
+                    "notes": "Smooth",
+                    "image_url": ""
+                },
+                {
+                    "name": "Cardamom Latte",
+                    "description": "House latte with cardamom syrup",
+                    "rating": 4.3,
+                    "notes": "Slight spice",
+                    "image_url": ""
+                }
+            ]
+        },
+        {
+            "name": "Old Town Brew",
+            "location": "Portland, OR",
+            "cafe_rating": 4.2,
+            "menu_rating": 4.0,
+            "image_url": "https://example.com/images/old-town.jpg",
+            "items": [
+                {
+                    "name": "Cold Brew",
+                    "description": "Slow-steeped cold brew",
+                    "rating": 4.5,
+                    "notes": "Bright acidity",
+                    "image_url": ""
+                },
+                {
+                    "name": "Blueberry Muffin",
+                    "description": "House baked muffin",
+                    "rating": 4.1,
+                    "notes": "Not too sweet",
+                    "image_url": ""
+                }
+            ]
+        },
+        {
+            "name": "Central Perch",
+            "location": "Denver, CO",
+            "cafe_rating": 4.0,
+            "menu_rating": 3.9,
+            "image_url": "https://example.com/images/central-perch.jpg",
+            "items": [
+                {
+                    "name": "Americano",
+                    "description": "Classic Americano",
+                    "rating": 3.9,
+                    "notes": "",
+                    "image_url": ""
+                },
+                {
+                    "name": "Avocado Toast",
+                    "description": "Sourdough, smashed avocado",
+                    "rating": 4.0,
+                    "notes": "Add chili flakes",
+                    "image_url": ""
+                }
+            ]
+        }
+    ],
+    "items": []
+}

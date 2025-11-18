@@ -2,7 +2,7 @@
     "cafes": [
         {
             "name": "Blue Willow Coffee",
-            "location": "Seattle, WA",
+            "location": "Coffeeville, CA",
             "cafe_rating": 4.6,
             "menu_rating": 4.4,
             "image_url": "https://example.com/images/blue-willow.jpg",
@@ -15,17 +15,17 @@
                     "image_url": ""
                 },
                 {
-                    "name": "Cardamom Latte",
-                    "description": "House latte with cardamom syrup",
+                    "name": "Americano",
+                    "description": "No changes",
                     "rating": 4.3,
-                    "notes": "Slight spice",
+                    "notes": "Very hot",
                     "image_url": ""
                 }
             ]
         },
         {
             "name": "Old Town Brew",
-            "location": "Portland, OR",
+            "location": "Coffeeville, CA",
             "cafe_rating": 4.2,
             "menu_rating": 4.0,
             "image_url": "https://example.com/images/old-town.jpg",
@@ -43,12 +43,19 @@
                     "rating": 4.1,
                     "notes": "Not too sweet",
                     "image_url": ""
+                },
+                {
+                    "name": "Americano",
+                    "description": "No changes",
+                    "rating": 2.9,
+                    "notes": "Almost tastes burnt",
+                    "image_url": ""
                 }
             ]
         },
         {
             "name": "Central Perch",
-            "location": "Denver, CO",
+            "location": "Coffeeville, CA",
             "cafe_rating": 4.0,
             "menu_rating": 3.9,
             "image_url": "https://example.com/images/central-perch.jpg",
@@ -69,6 +76,5 @@
                 }
             ]
         }
-    ],
-    "items": []
+    ]
 }

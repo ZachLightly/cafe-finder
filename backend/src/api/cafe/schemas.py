@@ -1,6 +1,8 @@
 from typing import Optional
 from pydantic import BaseModel, ConfigDict
 from uuid import UUID
+from typing import List
+from ..item.schemas import ItemResponse
 
 class CafePatch(BaseModel):
     name: Optional[str] = None
@@ -18,6 +20,7 @@ class CafePost(BaseModel):
 
 class CafeResponse(CafePost):
     id: UUID
+    items: List[ItemResponse]
 
     model_config = ConfigDict(from_attributes=True)
 

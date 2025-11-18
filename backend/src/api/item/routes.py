@@ -37,7 +37,7 @@ async def get_item_by_name(db: SessionDep, name: str):
     return service.get_by_name(name)
 
 @router.get("/by-cafe/{cafe_id}", response_model=List[ItemResponse])
-async def get_items_by_cafe_id(db: SessionDep, cafe_id: str):
+async def get_items_by_cafe_id(db: SessionDep, cafe_id: UUID):
     service = ItemService(db)
     return service.get_all_by_cafe_id(cafe_id)
 

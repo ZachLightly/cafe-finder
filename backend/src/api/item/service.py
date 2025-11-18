@@ -43,7 +43,7 @@ class ItemService:
         return ItemResponse.model_validate(orm_Item)
 
     def get_all_by_cafe_id(self, cafe_id: str) -> ItemResponse | None:
-        orm_items = self.repo.get_by_cafe_id(cafe_id)
+        orm_items = self.repo.get_all_by_cafe_id(cafe_id)
         return [ItemResponse.model_validate(orm_item) for orm_item in orm_items]
     
     def create(self, item: ItemPost) -> ItemResponse:

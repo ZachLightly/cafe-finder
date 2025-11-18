@@ -37,7 +37,7 @@ class ItemRepo:
         return cafes, total
     
     def create(self, data: ItemPost) -> Item:
-        item = Item(**data)
+        item = Item(**data.model_dump())
         self.db.add(item)
         self.db.commit()
         self.db.refresh(item)

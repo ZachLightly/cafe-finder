@@ -68,9 +68,11 @@ def get_user(db: SessionDep, username: str):
     user_repo = UserRepo(db)
     return user_repo.get_by_username(username)
 
-async def get_current_user(db: SessionDep, token: Annotated[str, Depends(oauth2_scheme)]):
+async def get_current_user(db: SessionDep, token: Annotated[str, Depends(oauth2_scheme)]) -> TokenData:
     token_data = decode_token(token)
     user = get_user(db, token_data.username)
     if user is None:
         raise credentials_exception
-    return user
+    return token_data
+
+CurrentUser = Annotated[TokenData, Depends(get_current_user)]

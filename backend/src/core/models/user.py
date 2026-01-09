@@ -13,6 +13,9 @@ class User(Base):
     hashed_password = Column(String)
     pfp_url = Column(String, nullable=True)
     bio = Column(String, nullable=True)
-    location = Column(String, nullable=True)
+    address_id = Column(UUID(as_uuid=True), ForeignKey("addresses.id"), nullable=True)
+    
+    location = relationship("Address", back_populates="user", uselist=False, cascade="all, delete-orphan")
     visits = relationship("Visit", back_populates="user", cascade="all, delete-orphan")
+    
     

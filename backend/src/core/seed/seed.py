@@ -13,7 +13,7 @@ from typing import Any
 
 from src.core.db import SessionLocal, create_db_and_tables
 from src.core.models.cafe import Cafe
-from src.core.models.item import Item
+from backend.src.core.models.menu_item import MenuItem
 
 
 SEED_JSON = Path(__file__).with_name("seed_data").joinpath("seed_data.json")
@@ -55,14 +55,14 @@ def seed_from_json(session) -> None:
 		for item_data in cafe_data.get("items", []):
 			item_name = item_data.get("name")
 			exists_item = (
-				session.query(Item)
-				.filter(Item.name == item_name, Item.cafe_id == cafe.id)
+				session.query(MenuItem)
+				.filter(MenuItem.name == item_name, MenuItem.cafe_id == cafe.id)
 				.first()
 			)
 			if exists_item:
 				continue
 
-			item = Item(
+			item = MenuItem(
 				name=item_data.get("name"),
 				description=item_data.get("description"),
 				rating=item_data.get("rating"),

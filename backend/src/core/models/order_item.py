@@ -8,6 +8,7 @@ class OrderItem(Base):
     __tablename__ = "order_items"
 
     id = Column(UUID(as_uuid=True), primary_key=True, index=True, default=uuid.uuid4)
+    name = Column(String, index=True, nullable=True)
     visit_id = Column(UUID(as_uuid=True), ForeignKey("visits.id"), nullable=False, index=True)
     menu_item_id = Column(UUID(as_uuid=True), ForeignKey("items.id"), nullable=False, index=True)
     quantity = Column(Integer, default=1)

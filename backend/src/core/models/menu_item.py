@@ -9,6 +9,7 @@ class MenuItem(Base):
 
     id = Column(UUID(as_uuid=True), primary_key=True, index=True, default=uuid.uuid4)
     name = Column(String, index=True)
+    name_slug = Column(String, index=True)
     description = Column(String)
     price = Column(Float)
     average_rating = Column(Float)

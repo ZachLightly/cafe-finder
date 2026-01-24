@@ -1,6 +1,6 @@
 from ...core.db import SessionDep
 from .repo import ItemRepo
-from .schemas import ItemPost, ItemPatch, ItemResponse, ItemListResponse
+from .schemas import ItemPost, MenuItemPatch, ItemResponse, ItemListResponse
 from uuid import UUID
 from fastapi import HTTPException
 
@@ -50,7 +50,7 @@ class ItemService:
         orm_item = self.repo.create(item)
         return ItemResponse.model_validate(orm_item)
     
-    def update_by_id(self, item_id: UUID, item: ItemPatch) -> ItemResponse | None:
+    def update_by_id(self, item_id: UUID, item: MenuItemPatch) -> ItemResponse | None:
         orm_item = self.repo.update_by_id(item_id, item)
         return ItemResponse.model_validate(orm_item) if orm_item else None
     

@@ -2,7 +2,7 @@ from ...core.db import SessionDep
 from typing import List
 from uuid import UUID
 from ...core.models.menu_item import MenuItem
-from .schemas import ItemPost, ItemPatch, ItemListResponse
+from .schemas import ItemPost, MenuItemPatch, ItemListResponse
 
 class ItemRepo:
     def __init__(self, db: SessionDep):
@@ -43,7 +43,7 @@ class ItemRepo:
         self.db.refresh(item)
         return item
 
-    def update_by_id(self, item_id: UUID, data: ItemPatch) -> MenuItem | None:
+    def update_by_id(self, item_id: UUID, data: MenuItemPatch) -> MenuItem | None:
         existing_item = self.get_by_id(item_id)
         if not existing_item:
             return None

@@ -9,6 +9,7 @@ class Cafe(Base):
 
     id = Column(UUID(as_uuid=True), primary_key=True, index=True, default=uuid.uuid4)
     name = Column(String, index=True)
+    name_slug = Column(String, index=True)
     address = relationship("Address", back_populates="cafe", uselist=False, cascade="all, delete-orphan")
     address_id = Column(UUID(as_uuid=True), ForeignKey("addresses.id"), nullable=False, index=True)
     

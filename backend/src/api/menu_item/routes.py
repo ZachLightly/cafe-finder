@@ -2,7 +2,7 @@ from typing import List
 from fastapi import APIRouter, Query
 from ...core.db import SessionDep
 from .service import ItemService
-from .schemas import ItemPost, ItemPatch, ItemResponse, ItemListResponse
+from .schemas import ItemPost, MenuItemPatch, ItemResponse, ItemListResponse
 from uuid import UUID
 
 
@@ -47,7 +47,7 @@ async def create_item(db: SessionDep, item: ItemPost):
     return service.create(item)
 
 @router.patch("/{item_id}", response_model=ItemResponse)
-async def update_item(db: SessionDep, item_id: UUID, item: ItemPatch):
+async def update_item(db: SessionDep, item_id: UUID, item: MenuItemPatch):
     service = ItemService(db)
     return service.update_by_id(item_id, item)
 
